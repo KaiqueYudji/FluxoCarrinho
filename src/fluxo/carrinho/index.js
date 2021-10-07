@@ -30,10 +30,32 @@ export default function Carrinho(){
             SetProdutos([...carrinho])
     }
 
+    function AlterarProduto(id,qtd){
+        // estou filtrando todos os itens do meu carrinho que o seu id seja igual o id do produto q estou alterando a qtd, o que retornar será o item q estou alterando
+        let produtoAlterado = produtos.filter(item => item.id === id)[0]
+        produtoAlterado.qtd = qtd
+
+        Cookie.set('carrinho', JSON.stringify(produtos))
+    }
+
 
 
     
     return(
-        <h1>Olá</h1>
-    )
+        <Container>
+        <h1> Carrinho </h1>
+  
+        <Link to="/"> Voltar </Link>
+        <div className="itens">
+        {produtos.map(item => 
+            <CarrinhoItem key={item.id} 
+                info={item} 
+                onUpdate={AlterarProduto} 
+                onRemove={RemoverProduto} />
+        )}
+        </div>
+ 
+     </Container>
+   )
+ 
 }
