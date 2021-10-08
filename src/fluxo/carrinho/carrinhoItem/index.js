@@ -10,7 +10,7 @@ import { Container, RemoverIcon } from './styled'
 
 
 export default function CarrinhoItem(props) {
-  // Carrega a Variável de Estado com o parâmetro recebido da tela Carrinho
+  // const produto é o produto que eu cliquei
   const [produto, setProduto] = useState(props.info);
 
   

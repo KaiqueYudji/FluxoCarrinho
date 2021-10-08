@@ -14,10 +14,11 @@ export default function Produto(props){
                 pathname:"/detalhe",
                 state:props.info
             }}>
-                
+                 
                 <button> Saiba mais</button>
                 
                  </Link>
+                 
         </Container>
      
     )
